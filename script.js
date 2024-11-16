@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const date = document.getElementById("date").value;
         const time = document.getElementById("time").value;
 
-        const bookingDetails = `Pickup Location: ${pickupLocation}\nDropoff Location: ${dropoffLocation}\nRide Type: ${rideType}\nDate: ${date}\nTime: ${time}`;
+        const bookingDetails = `Pickup: ${pickupLocation}\nDropoff: ${dropoffLocation}\nRide Type: ${rideType}\nDate: ${date}\nTime: ${time}`;
         document.getElementById("booking-details").textContent = bookingDetails;
         document.getElementById("confirmation-message").classList.remove("hidden");
     });
