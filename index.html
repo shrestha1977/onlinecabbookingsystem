@@ -36,7 +36,6 @@
         <!-- Booking Form -->
         <div id="booking-section" class="hidden">
             <h2>Book Your Ride</h2>
-
             <form id="booking-form">
                 <div class="form-group">
                     <label for="pickup-location">Pickup Location</label>
@@ -73,6 +72,68 @@
                 <h2>Your Cab Booking is Confirmed!</h2>
                 <p id="booking-details"></p>
             </div>
+        </div>
+
+        <!-- Lost Item Report -->
+        <div id="lost-item-section" class="hidden">
+            <h2>Lost Item Report</h2>
+            <form id="lost-item-form">
+                <div class="form-group">
+                    <label for="lost-item">Item Lost</label>
+                    <input type="text" id="lost-item" name="lost-item" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="item-description">Description</label>
+                    <textarea id="item-description" name="item-description" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" id="lost-item-btn">Submit Report</button>
+            </form>
+        </div>
+
+        <!-- Complaint Form -->
+        <div id="complaint-section" class="hidden">
+            <h2>Complaint</h2>
+            <form id="complaint-form">
+                <div class="form-group">
+                    <label for="complaint-type">Complaint Type</label>
+                    <select id="complaint-type" name="complaint-type" required>
+                        <option value="driver">Driver Issue</option>
+                        <option value="vehicle">Vehicle Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="complaint-description">Description</label>
+                    <textarea id="complaint-description" name="complaint-description" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" id="complaint-btn">Submit Complaint</button>
+            </form>
+        </div>
+
+        <!-- Query Form -->
+        <div id="query-section" class="hidden">
+            <h2>Query</h2>
+            <form id="query-form">
+                <div class="form-group">
+                    <label for="query-type">Query Type</label>
+                    <select id="query-type" name="query-type" required>
+                        <option value="ride-details">Ride Details</option>
+                        <option value="payment">Payment Query</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="query-description">Query Description</label>
+                    <textarea id="query-description" name="query-description" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" id="query-btn">Submit Query</button>
+            </form>
         </div>
     </div>
 
