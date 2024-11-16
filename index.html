@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cab Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Our Online Cab Booking System</h1>
+            <p>Book a cab with just a few clicks!</p>
+        </header>
+
+        <!-- User Authentication -->
+        <div id="auth-section">
+            <h2 id="auth-header">Login or Signup</h2>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" id="auth-btn">Login</button>
+            </form>
+
+            <button id="toggle-auth-btn">Don't have an account? Sign Up</button>
+        </div>
+
+        <!-- Booking Form -->
+        <div id="booking-section" class="hidden">
+            <h2>Book Your Ride</h2>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="pickup-location">Pickup Location</label>
+                    <input type="text" id="pickup-location" name="pickup-location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dropoff-location">Dropoff Location</label>
+                    <input type="text" id="dropoff-location" name="dropoff-location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ride-type">Ride Type</label>
+                    <select id="ride-type" name="ride-type" required>
+                        <option value="economy">Economy</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <button type="submit" id="book-btn">Book Cab</button>
+            </form>
+
+            <div id="confirmation-message" class="hidden">
+                <h2>Your Cab Booking is Confirmed!</h2>
+                <p id="booking-details"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
