@@ -1,10 +1,10 @@
-// Wait for the DOM to load before attaching event listeners
 document.addEventListener("DOMContentLoaded", function() {
     const authSection = document.getElementById("auth-section");
     const bookingSection = document.getElementById("booking-section");
-    const bookingForm = document.getElementById("booking-form");
-    const confirmationMessage = document.getElementById("confirmation-message");
-    const bookingDetails = document.getElementById("booking-details");
+    const lostItemSection = document.getElementById("lost-item-section");
+    const complaintSection = document.getElementById("complaint-section");
+    const querySection = document.getElementById("query-section");
+
     const authForm = document.getElementById("auth-form");
     const authBtn = document.getElementById("auth-btn");
     const toggleAuthBtn = document.getElementById("toggle-auth-btn");
@@ -53,22 +53,45 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Handle booking form submission
+    // Booking Form Submission
+    const bookingForm = document.getElementById("booking-form");
     bookingForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting and refreshing the page
-
-        // Get input values
+        event.preventDefault();
         const pickupLocation = document.getElementById("pickup-location").value;
         const dropoffLocation = document.getElementById("dropoff-location").value;
         const rideType = document.getElementById("ride-type").value;
         const date = document.getElementById("date").value;
         const time = document.getElementById("time").value;
 
-        // Display the confirmation message
-        bookingDetails.textContent = `Pickup Location: ${pickupLocation} \nDropoff Location: ${dropoffLocation} \nRide Type: ${rideType} \nDate: ${date} \nTime: ${time}`;
-        confirmationMessage.classList.remove("hidden");
+        const bookingDetails = `Pickup Location: ${pickupLocation}\nDropoff Location: ${dropoffLocation}\nRide Type: ${rideType}\nDate: ${date}\nTime: ${time}`;
+        document.getElementById("booking-details").textContent = bookingDetails;
+        document.getElementById("confirmation-message").classList.remove("hidden");
+    });
 
-        // Clear the form fields
-        bookingForm.reset();
+    // Lost Item Report Form
+    const lostItemForm = document.getElementById("lost-item-form");
+    lostItemForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const lostItem = document.getElementById("lost-item").value;
+        const itemDescription = document.getElementById("item-description").value;
+        alert(`Lost Item Reported: ${lostItem}\nDescription: ${itemDescription}`);
+    });
+
+    // Complaint Form
+    const complaintForm = document.getElementById("complaint-form");
+    complaintForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const complaintType = document.getElementById("complaint-type").value;
+        const complaintDescription = document.getElementById("complaint-description").value;
+        alert(`Complaint Reported: ${complaintType}\nDescription: ${complaintDescription}`);
+    });
+
+    // Query Form
+    const queryForm = document.getElementById("query-form");
+    queryForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const queryType = document.getElementById("query-type").value;
+        const queryDescription = document.getElementById("query-description").value;
+        alert(`Query Submitted: ${queryType}\nDescription: ${queryDescription}`);
     });
 });
